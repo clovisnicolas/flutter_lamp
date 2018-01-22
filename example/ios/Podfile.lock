@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - lamp (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `/Users/clovisnicolas/flutter/bin/cache/artifacts/engine/ios`)
+  - lamp (from `/Users/clovisnicolas/lamp/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: /Users/clovisnicolas/flutter/bin/cache/artifacts/engine/ios
+  lamp:
+    :path: /Users/clovisnicolas/lamp/ios
+
+SPEC CHECKSUMS:
+  Flutter: d674e78c937094a75ac71dd77e921e840bea3dbf
+  lamp: d36cd3552d535c77ab49112704c0c9386b9268bb
+
+PODFILE CHECKSUM: 351e02e34b831289961ec3558a535cbd2c4965d2
+
+COCOAPODS: 1.3.1

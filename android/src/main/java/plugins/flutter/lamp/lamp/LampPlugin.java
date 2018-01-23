@@ -20,7 +20,7 @@ public class LampPlugin implements MethodCallHandler {
     }
 
     public static void registerWith(Registrar registrar) {
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), "github.com/clovisnicolas/lamp");
+        final MethodChannel channel = new MethodChannel(registrar.messenger(), "github.com/clovisnicolas/flutter_lamp");
         channel.setMethodCallHandler(new LampPlugin(registrar));
     }
 

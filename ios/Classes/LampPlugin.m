@@ -4,7 +4,7 @@
 @implementation LampPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"github.com/clovisnicolas/lamp"
+      methodChannelWithName:@"github.com/clovisnicolas/flutter_lamp"
             binaryMessenger:[registrar messenger]];
   LampPlugin* instance = [[LampPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];

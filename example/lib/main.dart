@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   initPlatformState() async {
     bool hasFlash;
 
-    hasFlash = await Lamp.hasFlash;
+    hasFlash = await Lamp.hasLamp;
     print("Device has flash ? $hasFlash");
 
     if (!mounted)
@@ -36,23 +36,19 @@ class _MyAppState extends State<MyApp> {
     return new MaterialApp(
       theme: new ThemeData(primarySwatch: Colors.pink),
       home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Plugin example app'),
-        ),
+        appBar: new AppBar(title: new Text('Lamp plugin example')),
         body: new Center(
           child: new Text('Device has flash: $_hasFlash\n Flash is on: $_isOn'),
         ),
         floatingActionButton: new FloatingActionButton(
-          child: new Icon(Icons.flash_off),
+          child: new Icon(_isOn ? Icons.flash_off : Icons.flash_on),
           onPressed: turnFlash),
       ),
     );
   }
 
   void turnFlash() {
-    Lamp.turn(!_isOn);
-    setState((){
-      _isOn = !_isOn;
-    });
+    _isOn ? Lamp.turnOff() : Lamp.turnOn();
+    setState((){ _isOn = !_isOn; });
   }
 }

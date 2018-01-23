@@ -29,19 +29,24 @@ public class LampPlugin implements MethodCallHandler {
 
     @Override
     public void onMethodCall(MethodCall call, Result result) {
-        if (call.method.equals("turn")) {
-            boolean on = call.argument("on");
-            this.turn(on);
-            result.success(null);
-        } else if (call.method.equals("hasFlash")) {
-            result.success(this.hasFlash());
-        } else {
-            result.notImplemented();
+        switch(call.method){
+            case "turnOn":
+                this.turn(true);
+                result.success(null);
+                break;
+            case "turnOff":
+                this.turn(false);
+                result.success(null);
+                break;
+            case "hasLamp":
+                result.success(this.hasLamp());
+                break;
+            default:
+                result.notImplemented();
         }
     }
 
     private Camera getCamera() {
-        System.out.println("Method getCamera");
         try {
             return Camera.open();
         } catch (Exception e) {
@@ -52,7 +57,7 @@ public class LampPlugin implements MethodCallHandler {
 
     private void turn(boolean on) {
         Camera.Parameters params;
-        if (_camera == null || !hasFlash()) {
+        if (_camera == null || !hasLamp()) {
             return;
         }
         params = _camera.getParameters();
@@ -65,7 +70,7 @@ public class LampPlugin implements MethodCallHandler {
         }
     }
 
-    private boolean hasFlash() {
+    private boolean hasLamp() {
         return _registrar.context().getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
     }
 

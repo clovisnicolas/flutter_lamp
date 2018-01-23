@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 class Lamp {
 
   static const MethodChannel _channel = const MethodChannel('github.com/clovisnicolas/lamp');
-  static Future turn(bool on) => _channel.invokeMethod('turn',{"on" : on});
-  static Future<bool> get hasFlash => _channel.invokeMethod('hasFlash');
+  static Future turnOn() => _channel.invokeMethod('turnOn');
+  static Future turnOff() => _channel.invokeMethod('turnOff');
+  static Future<bool> get hasLamp => _channel.invokeMethod('hasLamp');
 }

@@ -1,5 +1,5 @@
 # Lamp
-
+[![pub package](https://img.shields.io/pub/v/lamp.svg)](https://pub.dartlang.org/packages/lamp)
 A Flutter plugin to access the device's lamp/torch on Android and iOS.
 
 ## Usage

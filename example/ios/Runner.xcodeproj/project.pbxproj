@@ -183,6 +183,7 @@
 				TargetAttributes = {
 					97C146ED1CF9000F007C117D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = PLYDCCZ843;
 					};
 				};
 			};
@@ -444,6 +445,7 @@
 			buildSettings = {
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PLYDCCZ843;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +457,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = plugins.flutter.lamp.lampExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flutter.plugins.lamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -466,6 +468,7 @@
 			buildSettings = {
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PLYDCCZ843;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -477,7 +480,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = plugins.flutter.lamp.lampExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flutter.plugins.lamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

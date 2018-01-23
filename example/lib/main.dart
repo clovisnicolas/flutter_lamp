@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lamp/lamp.dart';
+import 'dart:async';
 
 void main() => runApp(new MyApp());
 
@@ -12,6 +13,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool _hasFlash = false;
   bool _isOn = false;
+  double _intensity = 1.0;
 
   @override
   initState() {
@@ -20,14 +22,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   initPlatformState() async {
-    bool hasFlash;
-
-    hasFlash = await Lamp.hasLamp;
+    bool hasFlash = await Lamp.hasLamp;
     print("Device has flash ? $hasFlash");
-
-    if (!mounted)
-      return;
-
     setState(() { _hasFlash = hasFlash; });
   }
 
@@ -38,17 +34,34 @@ class _MyAppState extends State<MyApp> {
       home: new Scaffold(
         appBar: new AppBar(title: new Text('Lamp plugin example')),
         body: new Center(
-          child: new Text('Device has flash: $_hasFlash\n Flash is on: $_isOn'),
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+            new Text('Device has flash: $_hasFlash\n Flash is on: $_isOn'),
+            new Slider(value: _intensity, onChanged: _isOn ? _intensityChanged : null)
+          ]),
         ),
         floatingActionButton: new FloatingActionButton(
           child: new Icon(_isOn ? Icons.flash_off : Icons.flash_on),
-          onPressed: turnFlash),
+          onPressed: _turnFlash),
       ),
     );
   }
 
-  void turnFlash() {
-    _isOn ? Lamp.turnOff() : Lamp.turnOn();
-    setState((){ _isOn = !_isOn; });
+  Future _turnFlash() async {
+    _isOn ? Lamp.turnOff() : Lamp.turnOn(intensity: _intensity);
+    var f = await Lamp.hasLamp;
+    setState((){
+      _hasFlash = f;
+      _isOn = !_isOn;
+    });
   }
+
+  _intensityChanged(double intensity) {
+    Lamp.turnOn(intensity : intensity);
+    setState((){
+      _intensity = intensity;
+    });
+  }
+
 }

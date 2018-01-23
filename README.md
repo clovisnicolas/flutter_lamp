@@ -1,10 +1,25 @@
-# lamp
+# Lamp
 
-A new Flutter plugin.
+A Flutter plugin to access the device's lamp/torch on Android and iOS.
 
-## Getting Started
+## Usage
+To use this plugin, add `lamp` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+## Example
+``` dart
+// Import package
+import 'package:lamp/lamp.dart';
 
-For help on editing plugin code, view the [documentation](https://flutter.io/platform-plugins/#edit-code).
+// Turn the lamp on:
+Lamp.turnOn();
+
+// Turn the lamp off:
+Lamp.turnOff();
+
+// Turn the lamp with a specific intensity (only affects iOS as of now):
+Lamp.turnOn(intensity: 0.4);
+
+// Check if the device has a lamp:
+bool hasLamp = await Lamp.hasLamp;
+
+```

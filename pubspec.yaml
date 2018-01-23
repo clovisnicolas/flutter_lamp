@@ -1,8 +1,8 @@
 name: lamp
 description: A new Flutter plugin.
 version: 0.0.1
-author:
-homepage:
+author: Clovis Nicolas <clovisnicolas0@gmail.com>
+homepage: https://github.com/clovisnicolas/flutter_lamp
 
 dependencies:
   flutter:

@@ -5,6 +5,16 @@ A Flutter plugin to access the device's lamp/torch on Android and iOS.
 ## Usage
 To use this plugin, add `lamp` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
+For android, add the following to your manifest
+
+``` 
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.FLASHLIGHT" />
+<uses-feature android:name="android.hardware.camera" />
+<uses-feature android:name="android.hardware.camera.autofocus" />
+<uses-feature android:name="android.hardware.camera.flash" />
+``` 
+
 ## Example
 ``` dart
 // Import package

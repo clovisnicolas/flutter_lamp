@@ -1,3 +1,6 @@
+## [0.0.4] - May 7th, 2018.
+Fix syntax error
+
 ## [0.0.3] - May 6th, 2018.
 Fix Dart 2.0 compatibility
 

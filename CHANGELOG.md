@@ -1,3 +1,6 @@
+## [0.0.5] - May 10th, 2018.
+Implement flashing for duration
+
 ## [0.0.4] - May 7th, 2018.
 Fix syntax error
 

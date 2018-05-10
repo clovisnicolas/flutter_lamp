@@ -3,6 +3,9 @@ package plugins.flutter.lamp.lamp;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
@@ -41,6 +44,9 @@ public class LampPlugin implements MethodCallHandler {
             case "hasLamp":
                 result.success(this.hasLamp());
                 break;
+            case "flash":
+                this.flash(call.<Integer>argument("duration").longValue(), result);
+                break;
             default:
                 result.notImplemented();
         }
@@ -72,6 +78,17 @@ public class LampPlugin implements MethodCallHandler {
 
     private boolean hasLamp() {
         return _registrar.context().getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+    }
+
+    private void flash(long duration, final Result result) {
+        turn(true);
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                turn(false);
+                result.success(null);
+            }
+        }, duration);
     }
 
 }

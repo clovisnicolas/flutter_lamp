@@ -37,7 +37,8 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
             new Text('Device has flash: $_hasFlash\n Flash is on: $_isOn'),
-            new Slider(value: _intensity, onChanged: _isOn ? _intensityChanged : null)
+            new Slider(value: _intensity, onChanged: _isOn ? _intensityChanged : null),
+            new RaisedButton(onPressed: () async => await Lamp.flash(new Duration(seconds: 2)), child:  new Text("Flash for 2 seconds"))
           ]),
         ),
         floatingActionButton: new FloatingActionButton(

@@ -1,3 +1,6 @@
+## [0.0.6] - August 22, 2018
+* Adjust pubspec.yml to match Dart 2.0 SDK version
+
 ## [0.0.5] - May 10th, 2018.
 Implement flashing for duration
 

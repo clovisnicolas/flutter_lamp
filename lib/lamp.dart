@@ -9,5 +9,6 @@ class Lamp {
   static Future turnOff() => _channel.invokeMethod('turnOff');
   static Future<bool> get hasLamp async => await _channel.invokeMethod('hasLamp');
   static Future flash(Duration duration) => turnOn().whenComplete(() => new Future.delayed(duration, () => turnOff()));
-
+  static Future flash(Duration duration, {double intensity = 1.0}) => turnOn(intensity: intensity).whenComplete(() => new Future.delayed(duration, () => turnOff()));
+  
 }

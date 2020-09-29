@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lamp/lamp.dart';
 import 'dart:async';
 
-void main() => runApp(new MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   @override

@@ -65,7 +65,7 @@
       "name": "lamp",
       "rootUri": "../../",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.12"
     },
     {
       "name": "matcher",
@@ -149,10 +149,10 @@
       "name": "lamp_example",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-03-11T12:19:30.878473Z",
+  "generated": "2022-03-11T12:22:33.790429Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }

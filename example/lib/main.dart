@@ -10,7 +10,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _hasFlash = false;
+  bool? _hasFlash = false;
   bool _isOn = false;
   double _intensity = 1.0;
 
@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   initPlatformState() async {
-    bool hasFlash = await Lamp.hasLamp;
+    bool? hasFlash = await Lamp.hasLamp;
     print("Device has flash ? $hasFlash");
     setState(() { _hasFlash = hasFlash; });
   }
